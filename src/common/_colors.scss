@@ -1,0 +1,36 @@
+$fade-factor: 10%;
+
+$color-main: #131313; //oklch(0.4804 0.1546 259.92);
+$color-main-fade: color-mix(in srgb, $color-main 90%, white);
+$color-main-dark: color-mix(in srgb, $color-main 70%, black);
+
+$color-background: #ffffff;
+$color-background-fade: #f3f3f3;
+$color-background-main: color-mix(in srgb, $color-main 5%, $color-background);
+
+@mixin revert-colors($main: $color-main, $background: $color-background) {
+  $color-main: $background;
+  $color-background: $main;
+}
+@function fade($tint, $fade-factor) {
+  @return color-mix(in srgb, $tint $fade-factor, $color-background);
+}
+
+$color-info: #0a7291;
+$color-info-fade: fade($color-info);
+$color-success: #04701c;
+$color-success-fade: fade($color-success);
+$color-critical: #bc0000;
+$color-critical-fade: fade($color-critical);
+
+$color-text-primary: #2c2c2c;
+$color-text-secondary: #474747;
+$color-text-tertiary: #616161;
+
+$color-overlay: #000c;
+$color-grey: #777;
+$color-grey-fade: #cccccc;
+
+body {
+  color-scheme: light;
+}

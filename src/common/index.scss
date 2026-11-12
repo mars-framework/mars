@@ -1,0 +1,12 @@
+@forward "struct";
+@forward "colors";
+
+* {
+  margin: 0;
+  font-family: Outfit, serif;
+}
+
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}

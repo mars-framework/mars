@@ -1,0 +1,158 @@
+$duration: .15s !default;
+$animation-timing: ease-in-out !default;
+
+@keyframes fade {
+  to {
+    opacity: 0;
+    scale: 0;
+  }
+}
+.fade {
+  animation: fade $duration $animation-timing;
+}
+@keyframes from-bottom {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  85% {
+    opacity: 1;
+    transform: translateY(-20px);
+  }
+}
+.from-bottom {
+  animation: from-bottom $duration $animation-timing;
+}
+@keyframes from-left {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  85% {
+    opacity: 1;
+    transform: translateX(20px);
+  }
+}
+.from-left {
+  animation: from-left $duration $animation-timing;
+}
+@keyframes from-right {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  85% {
+    opacity: 1;
+    transform: translateX(-20px);
+  }
+}
+.from-right {
+  animation: from-right $duration $animation-timing;
+}
+@keyframes from-top {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  85% {
+    opacity: 1;
+    transform: translateY(-20px);
+  }
+}
+.from-top {
+  animation: from-top $duration $animation-timing;
+}
+@keyframes pop {
+  from {
+    opacity: 0;
+    scale: 1;
+  }
+  85% {
+    opacity: 1;
+    scale: 1.1;
+  }
+}
+.pop {
+  animation: pop $duration $animation-timing;
+}
+/*@keyframes rack-slide {
+  50% {
+    transform: scaleX(200%) translateX(500%);
+
+  }
+  to {
+    transform: translateX(600%);
+  }
+}*/
+@keyframes rotate {
+  100% {
+    transform: rotate(1turn)
+  }
+}
+.rotate {
+  animation: rotate $duration $animation-timing;
+}
+/*@keyframes slide-to-right {
+  0% {
+    background-position: right
+  }
+}
+@keyframes smooth-list-close {
+  100% {
+    max-height: 0;
+    opacity: 0;
+  }
+}
+@keyframes smooth-list-open {
+  0% {
+    max-height: 0;
+    opacity: 0;
+  }
+  16.7% {
+    opacity: 1;
+  }
+}*/
+@keyframes to-bottom {
+  to {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+.to-bottom {
+  animation: to-bottom $duration $animation-timing;
+}
+@keyframes to-left {
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+.to-left {
+  animation: to-left $duration $animation-timing;
+}
+@keyframes to-right {
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+.to-right {
+  animation: to-right $duration $animation-timing;
+}
+@keyframes to-top {
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+.to-top {
+  animation: to-top $duration $animation-timing;
+}
+@keyframes transparent {
+  to {
+    opacity: 0;
+  }
+}
+.transparent {
+  animation: transparent $duration $animation-timing;
+}
