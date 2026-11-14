@@ -1,5 +1,4 @@
-@use "colors" as *;
-@use "struct" as *;
+@use "struct";
 
 .m-button, .m-ghost-button, .m-input[type="file"]::file-selector-button {
   @extend .m-row, .m-center, .m-gap-xs;
@@ -13,25 +12,22 @@
   transition: background .1s ease-in-out, color .1s ease-in-out;
 }
 .m-button, .m-input[type="file"]::file-selector-button {
-  $color-background: revert-colors("background");
-  $color-main: revert-colors("main");
-
-  background: $color-background;
-  color: $color-main;
+  background: var(--m-color-main);
+  color: var(--m-color-button-text);
 
   &:hover, &:focus {
-    color: $color-background-fade;
-    background: $color-main-fade;
+    color: var(--m-color-button-text);
+    background: var(--m-color-main-half);
   }
 }
 .m-button:disabled, .m-button.m-secondary:disabled, .m-ghost-button:disabled, .m-input[type="file"]:disabled::file-selector-button {
-  $color: color-mix(in srgb, $color-grey 60%, $color-background);
-  background: $color-background-fade;
+  $color: color-mix(in srgb, var(--m-color-grey) 60%, var(--m-color-background));
+  background: var(--m-color-background-fade);
   color: $color;
   cursor: not-allowed;
 
   &:hover, &:focus {
-    background: $color-background-fade;
+    background: var(--m-color-background-fade);
     color: $color;
   }
 }
@@ -44,49 +40,49 @@
 
 .m-button {
   &.m-critical {
-    background: $color-critical;
+    background: var(--m-color-critical);
 
     &:hover, &:focus {
-      background: $color-critical-fade;
-      color: $color-critical;
+      background: var(--m-color-critical-fade);
+      color: var(--m-color-critical);
     }
   }
   &.m-secondary {
-    color: $color-main;
-    background: $color-background-main;
+    color: var(--m-color-main);
+    background: var(--m-color-main-fade);
 
     &:hover, &:focus {
-      color: $color-background;
-      background: $color-main-fade;
+      color: var(--m-color-background);
+      background: var(--m-color-main-half);
     }
 
     &.m-critical {
-      background: $color-critical-fade;
-      color: $color-critical;
+      background: var(--m-color-critical-fade);
+      color: var(--m-color-critical);
 
       &:hover, &:focus {
-        background: $color-critical;
-        color: $color-background;
+        background: var(--m-color-critical);
+        color: var(--m-color-button-text);
       }
     }
   }
 }
 .m-ghost-button {
   background: transparent;
-  color: $color-main;
+  color: var(--m-color-main);
 
   &:hover, &:focus {
-    color: $color-main-fade;
-    background: $color-background-fade;
+    color: var(--m-color-main-half);
+    background: var(--m-color-main-fade);
   }
 
   &.m-critical {
-    color: $color-critical;
+    color: var(--m-color-critical);
     background: transparent;
 
     &:hover, &:focus {
-      background: $color-critical-fade;
-      color: $color-critical;
+      background: var(--m-color-critical-fade);
+      color: var(--m-color-critical);
     }
   }
 }

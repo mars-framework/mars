@@ -1,10 +1,7 @@
-@use "../colors";
-@use "../struct";
+@use "../../colors/common" as *;
 
-.m-revert-area {
-  @extend .m-column, .m-gap;
-  $color-background: colors.revert-colors("background");
-  $color-main: colors.revert-colors("main");
-
-  background: $color-background;
+.m-area {
+  @include colors;
+  background: var(--m-color-background);
+  color: var(--m-color-text-primary);
 }

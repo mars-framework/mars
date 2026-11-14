@@ -1,0 +1,16 @@
+@use "dark";
+@use "light";
+@forward "accent";
+
+body {
+  --m-color-main: #2259b3; //oklch(0.4804 0.1546 259.92);
+  --m-color-main-dark: color-mix(in srgb, var(--m-color-main) 70%, black);
+}
+
+.m-dark {
+  @include dark.dark;
+}
+
+.m-light {
+  @include light.light;
+}

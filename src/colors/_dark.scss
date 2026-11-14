@@ -1,0 +1,23 @@
+@use "common";
+
+@mixin dark() {
+  @include common.colors;
+
+  color-scheme: dark;
+  --m-fade-factor: 25%;
+
+  --m-color-background: #000000;
+  --m-color-background-fade: #121212;
+
+  --m-color-main-half: color-mix(in srgb, var(--m-color-main) 80%, transparent);
+  --m-color-main-fade: color-mix(in srgb, var(--m-color-main) 20%, transparent);
+
+  --m-color-text-primary: #c6c6c6;
+  --m-color-text-secondary: #7a7a7a;
+  --m-color-text-tertiary: #575757;
+  --m-color-button-text: #e6e6e6;
+
+  --m-color-overlay: #7a7a7acc;
+  --m-color-grey: #939393;
+  --m-color-grey-fade: #353535;
+}

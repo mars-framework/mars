@@ -1,8 +1,6 @@
-@use "../colors" as *;
-
 .m-separator {
   height: 1px;
-  background: $color-grey-fade;
+  background: var(--m-color-grey-fade);
   border: none;
 
   &-vertical {

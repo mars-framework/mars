@@ -11,7 +11,7 @@
 .m-italic {
   font-style: italic;
 }
-.m-little {
+.m-small-text {
   font-size: 1.4rem;
 }
 .m-text-center {
@@ -46,4 +46,12 @@
   &.m-xs {
     font-size: 1.7rem;
   }
+}
+
+// Colors
+.m-text-secondary {
+  color: var(--m-color-text-secondary);
+}
+.m-text-tertiary {
+  color: var(--m-color-text-tertiary);
 }

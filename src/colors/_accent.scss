@@ -1,0 +1,29 @@
+@mixin accent {
+  --m-fade-factor: 25%;
+
+  --m-color-background: var(--m-color-main-dark);
+  --m-color-background-fade: color-mix(in srgb, var(--m-color-main-dark) 70%, black);
+
+  --m-color-main: #ffffff;
+  --m-color-main-half: color-mix(in srgb, var(--m-color-main) 80%, transparent);
+  --m-color-main-fade: color-mix(in srgb, var(--m-color-main) 15%, transparent);
+
+  --m-color-text-primary: color-mix(in srgb, var(--m-color-main) 70%, var(--m-color-background));
+  --m-color-text-secondary: color-mix(in srgb, var(--m-color-main) 55%, var(--m-color-background));
+  --m-color-text-tertiary: color-mix(in srgb, var(--m-color-main) 45%, var(--m-color-background));
+  --m-color-button-text: #2c2c2c;
+
+  --m-color-grey: color-mix(in srgb, var(--m-color-main) 40%, var(--m-color-background));
+  --m-color-grey-fade: color-mix(in srgb, var(--m-color-main) 20%, var(--m-color-background));
+
+  --m-color-critical: #e15454;
+  --m-color-critical-fade: color-mix(
+          in srgb,
+          var(--m-color-critical) var(--m-fade-factor),
+          var(--m-color-main)
+  );
+}
+
+.m-accent-area {
+  @include accent;
+}

@@ -1,5 +1,4 @@
 @forward "struct";
-@forward "colors";
 @forward "text";
 @forward "link";
 @forward "button";
@@ -17,8 +16,7 @@ html {
 }
 
 body {
-  background: var(--m-color-background);
-  color: var(--m-color-text);
+  @extend .m-area;
   font-size: 1.6rem;
   line-height: 2.2rem;
   min-height: 100vh;

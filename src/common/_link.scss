@@ -1,18 +1,15 @@
-@use "colors" as *;
+.m-link, .m-link:visited {
+  color: var(--m-color-main); //inherit;
+}
 
 .m-link {
-  color: inherit;
   position: relative;
   background: none;
   text-decoration: none;
 
-  &:visited {
-    color: inherit;
-  }
-
   &::after {
     content: "";
-    background: $color-main;
+    background: var(--m-color-main);
     position: absolute;
     left: 0;
     bottom: -.1rem;
