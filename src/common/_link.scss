@@ -1,0 +1,29 @@
+@use "colors" as *;
+
+.m-link {
+  color: inherit;
+  position: relative;
+  background: none;
+  text-decoration: none;
+
+  &:visited {
+    color: inherit;
+  }
+
+  &::after {
+    content: "";
+    background: $color-main;
+    position: absolute;
+    left: 0;
+    bottom: -.1rem;
+    width: 0;
+    height: 1px;
+    transition: width .2s ease-in-out;
+  }
+
+  &:hover, &:focus {
+    &::after {
+      width: 100%;
+    }
+  }
+}

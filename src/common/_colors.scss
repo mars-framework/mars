@@ -1,6 +1,6 @@
 $fade-factor: 10%;
 
-$color-main: #131313; //oklch(0.4804 0.1546 259.92);
+$color-main: #050505; //oklch(0.4804 0.1546 259.92);
 $color-main-fade: color-mix(in srgb, $color-main 90%, white);
 $color-main-dark: color-mix(in srgb, $color-main 70%, black);
 
@@ -8,12 +8,17 @@ $color-background: #ffffff;
 $color-background-fade: #f3f3f3;
 $color-background-main: color-mix(in srgb, $color-main 5%, $color-background);
 
-@mixin revert-colors($main: $color-main, $background: $color-background) {
-  $color-main: $background;
-  $color-background: $main;
-}
-@function fade($tint, $fade-factor) {
+@function fade($tint, $fade-factor: $fade-factor) {
   @return color-mix(in srgb, $tint $fade-factor, $color-background);
+}
+@function revert-colors($color-name) {
+  @if ($color-name == "main") {
+    @return $color-background;
+  } @else if ($color-name == "background") {
+    @return $color-main;
+  } @else {
+    @error "Property #{$color-name} must be either main or background.";
+  }
 }
 
 $color-info: #0a7291;

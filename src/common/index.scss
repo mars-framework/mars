@@ -1,12 +1,30 @@
 @forward "struct";
 @forward "colors";
+@forward "text";
+@forward "link";
+@forward "button";
+@forward "cards";
 
 * {
   margin: 0;
   font-family: Outfit, serif;
+  font-weight: 400;
 }
 
 html {
   font-size: 10px;
   scroll-behavior: smooth;
+}
+
+body {
+  background: var(--m-color-background);
+  color: var(--m-color-text);
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  min-height: 100vh;
+}
+
+main {
+  @extend .m-column, .m-gap, .m-grow;
+  padding: 20px 40px 30px;
 }

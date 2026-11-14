@@ -1,0 +1,49 @@
+@font-face {
+  font-family: "Outfit";
+  src: local("Outfit"), local("Outfit"), url("../../assets/fonts/Outfit-VariableFont_wght.ttf");
+  font-display: optional;
+}
+
+// Common
+.m-bold {
+  font-weight: bold;
+}
+.m-italic {
+  font-style: italic;
+}
+.m-little {
+  font-size: 1.4rem;
+}
+.m-text-center {
+  text-align: center;
+}
+.m-text-left {
+  text-align: left;
+}
+.m-text-right {
+  text-align: right;
+}
+.m-uppercase {
+  text-transform: uppercase;
+}
+
+// Heading
+.m-heading {
+  font-size: 2.1rem;
+
+  &.m-xxl {
+    font-size: 2.7rem;
+  }
+  &.m-xl {
+    font-size: 2.5rem;
+  }
+  &.m-l {
+    font-size: 2.3rem;
+  }
+  &.m-s {
+    font-size: 1.9rem;
+  }
+  &.m-xs {
+    font-size: 1.7rem;
+  }
+}

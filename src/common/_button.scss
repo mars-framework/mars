@@ -1,0 +1,92 @@
+@use "colors" as *;
+@use "struct" as *;
+
+.m-button, .m-ghost-button, .m-input[type="file"]::file-selector-button {
+  @extend .m-row, .m-center, .m-gap-xs;
+
+  font-size: 1.7rem;
+  height: 3.5rem;
+  padding: .5rem 1rem;
+  border: none;
+  border-radius: .5rem;
+  cursor: pointer;
+  transition: background .1s ease-in-out, color .1s ease-in-out;
+}
+.m-button, .m-input[type="file"]::file-selector-button {
+  $color-background: revert-colors("background");
+  $color-main: revert-colors("main");
+
+  background: $color-background;
+  color: $color-main;
+
+  &:hover, &:focus {
+    color: $color-background-fade;
+    background: $color-main-fade;
+  }
+}
+.m-button:disabled, .m-button.m-secondary:disabled, .m-ghost-button:disabled, .m-input[type="file"]:disabled::file-selector-button {
+  $color: color-mix(in srgb, $color-grey 60%, $color-background);
+  background: $color-background-fade;
+  color: $color;
+  cursor: not-allowed;
+
+  &:hover, &:focus {
+    background: $color-background-fade;
+    color: $color;
+  }
+}
+.m-button, .m-ghost-button {
+  &.m-ico-button {
+    width: 3.5rem;
+    font-size: 2rem;
+  }
+}
+
+.m-button {
+  &.m-critical {
+    background: $color-critical;
+
+    &:hover, &:focus {
+      background: $color-critical-fade;
+      color: $color-critical;
+    }
+  }
+  &.m-secondary {
+    color: $color-main;
+    background: $color-background-main;
+
+    &:hover, &:focus {
+      color: $color-background;
+      background: $color-main-fade;
+    }
+
+    &.m-critical {
+      background: $color-critical-fade;
+      color: $color-critical;
+
+      &:hover, &:focus {
+        background: $color-critical;
+        color: $color-background;
+      }
+    }
+  }
+}
+.m-ghost-button {
+  background: transparent;
+  color: $color-main;
+
+  &:hover, &:focus {
+    color: $color-main-fade;
+    background: $color-background-fade;
+  }
+
+  &.m-critical {
+    color: $color-critical;
+    background: transparent;
+
+    &:hover, &:focus {
+      background: $color-critical-fade;
+      color: $color-critical;
+    }
+  }
+}

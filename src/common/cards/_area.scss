@@ -1,0 +1,10 @@
+@use "../colors";
+@use "../struct";
+
+.m-revert-area {
+  @extend .m-column, .m-gap;
+  $color-background: colors.revert-colors("background");
+  $color-main: colors.revert-colors("main");
+
+  background: $color-background;
+}

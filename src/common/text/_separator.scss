@@ -1,0 +1,13 @@
+@use "../colors" as *;
+
+.m-separator {
+  height: 1px;
+  background: $color-grey-fade;
+  border: none;
+
+  &-vertical {
+    @extend .m-separator;
+    width: 1px;
+    height: 100%;
+  }
+}

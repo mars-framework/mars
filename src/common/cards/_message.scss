@@ -1,0 +1,41 @@
+@use "card";
+@use "../colors" as *;
+@use "../text";
+
+.m-message {
+  @extend .m-column;
+  $border: $color-info;
+  $background: $color-info-fade;
+  $background-hover: color-mix(in srgb, $border 70%, transparent);
+
+  background: $background;
+  border-left: 7px solid $border;
+  border-radius: .5rem;
+  gap: .6rem;
+
+  &-heading {
+    @extend .m-card-heading, .m-uppercase;
+
+    .bi {
+      color: $border;
+    }
+  }
+
+  .m-link {
+    color: $border;
+
+    &::after {
+      background: $border;
+    }
+  }
+
+  &.m-success {
+    $border: $color-success;
+    $background: $color-success-fade;
+  }
+
+  &.m-critical {
+    $border: $color-critical;
+    $background: $color-critical-fade;
+  }
+}

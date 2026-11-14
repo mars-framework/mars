@@ -1,0 +1,21 @@
+@use "../struct";
+@use "../colors" as *;
+@use "../text/index";
+
+.m-card {
+  @extend .m-column, .m-gap-s;
+  border-radius: .5rem;
+
+  &-heading {
+    @extend .m-row, .m-gap-s, .m-bold, .m-heading, .m-xs;
+    text-wrap: nowrap;
+
+    .bi {
+      font-size: 2rem;
+    }
+  }
+
+  .m-link {
+    color: $color-main;
+  }
+}
