@@ -3,38 +3,36 @@
 
 .m-message {
   @extend .m-column;
-  $border: var(--m-color-info);
-  $background: var(--m-color-info-fade);
-  $background-hover: color-mix(in srgb, $border 70%, transparent);
+  --border: var(--m-color-info);
+  --background: var(--m-color-info-fade);
+  --color: color-mix(in srgb, var(--border) 75%, var(--m-color-button-text));
 
-  background: $background;
-  border-left: 7px solid $border;
+  background: var(--background);
+  border-left: 7px solid var(--border);
   border-radius: .5rem;
   gap: .6rem;
+  padding: 1rem;
 
   &-heading {
     @extend .m-card-heading, .m-uppercase;
-
-    .bi {
-      color: $border;
-    }
+    color: var(--color);
   }
 
   .m-link {
-    color: $border;
+    color: var(--color);
 
     &::after {
-      background: $border;
+      background: var(--color);
     }
   }
 
   &.m-success {
-    $border: var(--m-color-success);
-    $background: var(--m-color-success-fade);
+    --border: var(--m-color-success);
+    --background: var(--m-color-success-fade);
   }
 
   &.m-critical {
-    $border: var(--m-color-critical);
-    $background: var(--m-color-critical-fade);
+    --border: var(--m-color-critical);
+    --background: var(--m-color-critical-fade);
   }
 }

@@ -1,12 +1,28 @@
 @use "../struct";
 @use "../text/index";
 
+@mixin alternate-backgrounds($depth: 12, $level: 1) {
+  @if($level % 2 == 1) {
+    background: var(--m-color-background-fade);
+  } @else {
+    background: var(--m-color-background);
+  }
+
+  @if $level < $depth {
+    .m-card {
+      @include alternate-backgrounds($depth, $level + 1);
+    }
+  }
+}
+
 .m-card {
   @extend .m-column, .m-gap-s;
+  @include alternate-backgrounds();
   border-radius: .5rem;
+  padding: 1rem;
 
   &-heading {
-    @extend .m-row, .m-gap-s, .m-bold, .m-heading, .m-xs;
+    @extend .m-row, .m-gap-xs, .m-bold, .m-heading, .m-xs, .m-text-secondary;
     text-wrap: nowrap;
 
     .bi {

@@ -1,8 +1,8 @@
 @mixin accent {
-  --m-fade-factor: 25%;
+  --m-fade-factor: 35%;
 
   --m-color-background: var(--m-color-main-dark);
-  --m-color-background-fade: color-mix(in srgb, var(--m-color-main-dark) 70%, black);
+  --m-color-background-fade: color-mix(in srgb, var(--m-color-main-dark) 80%, black);
 
   --m-color-main: #ffffff;
   --m-color-main-half: color-mix(in srgb, var(--m-color-main) 80%, transparent);
@@ -16,12 +16,36 @@
   --m-color-grey: color-mix(in srgb, var(--m-color-main) 40%, var(--m-color-background));
   --m-color-grey-fade: color-mix(in srgb, var(--m-color-main) 20%, var(--m-color-background));
 
+  --m-color-info: #37b0d3;
+  --m-color-info-fade: color-mix(
+          in srgb,
+          var(--m-color-info) var(--m-fade-factor),
+          var(--m-color-main)
+  );
+  --m-color-success: #2dba4d;
+  --m-color-success-fade: color-mix(
+          in srgb,
+          var(--m-color-success) var(--m-fade-factor),
+          var(--m-color-main)
+  );
   --m-color-critical: #e15454;
   --m-color-critical-fade: color-mix(
           in srgb,
           var(--m-color-critical) var(--m-fade-factor),
           var(--m-color-main)
   );
+
+  .m-message {
+    color: var(--m-color-button-text);
+
+    .m-link {
+      color: var(--m-color-background);
+
+      &::after {
+        background: var(--m-color-background);
+      }
+    }
+  }
 }
 
 .m-accent-area {
