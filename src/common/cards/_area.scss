@@ -1,7 +1,4 @@
-@use "../../colors/common" as *;
-
 .m-area {
-  @include colors;
   background: var(--m-color-background);
   color: var(--m-color-text-primary);
 }

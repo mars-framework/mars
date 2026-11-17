@@ -35,9 +35,20 @@
           var(--m-color-main)
   );
 
-  .m-message {
+  .m-highlight, .m-message {
     color: var(--m-color-button-text);
-
+  }
+  .m-highlight {
+    --color: var(--m-color-info-fade);
+    background: var(--color);
+    &.m-success {
+      --color: var(--m-color-success-fade);
+    }
+    &.m-critical {
+      --color: var(--m-color-critical-fade);
+    }
+  }
+  .m-message {
     .m-link {
       color: var(--m-color-background);
 

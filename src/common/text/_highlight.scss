@@ -1,0 +1,14 @@
+.m-highlight {
+  --color: var(--m-color-info);
+  background: color-mix(in srgb, var(--color) 40%, transparent); //var(--color);
+  //color: var(--m-color-button-text);
+  padding: 0 .5rem .1rem;
+  border-radius: .3rem;
+
+  &.m-success {
+    --color: var(--m-color-success);
+  }
+  &.m-critical {
+    --color: var(--m-color-critical);
+  }
+}
