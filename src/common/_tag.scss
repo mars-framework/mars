@@ -1,0 +1,22 @@
+@use "button";
+@use "text/fonts";
+@use "struct";
+
+.m-tag, .m-tag-inert {
+  border-radius: 2rem;
+}
+.m-tag {
+  @extend .m-button, .m-secondary;
+  padding: .25rem .7rem;
+  font-size: 1.4rem;
+  height: unset;
+  text-decoration: underline;
+
+  &-inert {
+    @extend .m-small-text, .m-row, .m-gap-xs, .m-center, .m-text-center;
+    padding: .2rem .7rem;
+    background: var(--m-color-main-fade);
+    color: var(--m-color-text-primary);
+    line-height: 1.3;
+  }
+}
